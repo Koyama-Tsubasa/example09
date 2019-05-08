@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
@@ -53,12 +54,12 @@ public class SecondActivity extends Activity {
         int b = x.nextInt(256);
         int g = x.nextInt(256);
 
-        TextView t = findViewById(R.id.textView2);
+        Spannable s = new SpannableStringBuilder(getString(R.string.act2));
+        TextView tv = findViewById(R.id.textView2);
 
-        SpannableStringBuilder s = new SpannableStringBuilder(getString(R.string.act2));
-        s.setSpan(new ForegroundColorSpan(Color.rgb(r,g,b)),8,17,0);
+        s.setSpan(new ForegroundColorSpan(Color.rgb(r,g,b)),8,17, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        t.setText(s);
+        tv.setText(s);
 
     }
 
